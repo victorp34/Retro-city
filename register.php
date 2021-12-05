@@ -67,7 +67,7 @@
 										if (preg_match("/@/", $_POST["email"])) {
 											$reqprep->execute(["name"=>$_POST["name"], "surname"=>$_POST["surname"], "email"=>$_POST["email"], "password"=>$_POST["password"]]);
 											echo "<div class='display2'>Le compte a été créé</div>";
-                                            echo "<div class='input-btn'><button class='btn-connexion'><a href='login.php'> Se connecter </a><button></div>";
+                                            echo "<div class='input-btn'><button class='btn-connexion'><a href='login.php' style='color:white;text-decoration:none;'> Se connecter </a><button></div>";
                                             ?>
 												<script type="text/javascript">
 													window.onload = function(){
