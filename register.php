@@ -55,8 +55,8 @@
 				<?php
 					if (isset($_POST["name"], $_POST["surname"], $_POST["email"], $_POST["password"])) {
 						if(!empty($_POST["name"]) && !empty($_POST["surname"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
-							$dsn = 'mysql:host=localhost;dbname=console_project';
-							$dbh = new PDO($dsn, 'root', '');
+							$dsn = 'mysql:host=mysql-retro-gaming.alwaysdata.net;dbname=retro-gaming_console';
+							$dbh = new PDO($dsn, '251841', 'Password34070!');
 							$reqprep = $dbh->prepare("INSERT INTO users (name, surname, email, password) VALUES (:name, :surname, :email, :password)");
 							$verifmail = $dbh->prepare("SELECT * FROM users WHERE email=:email");
 							$verifmail->execute(["email"=>$_POST["email"]]);
@@ -67,7 +67,7 @@
 										if (preg_match("/@/", $_POST["email"])) {
 											$reqprep->execute(["name"=>$_POST["name"], "surname"=>$_POST["surname"], "email"=>$_POST["email"], "password"=>$_POST["password"]]);
 											echo "<div class='display2'>Le compte a été créé</div>";
-                                            echo "<div class='input-btn'><button class='btn-connexion'><a href='login.php' style='color:white;text-decoration:none;'> Se connecter </a><button></div>";
+                                            echo "<div class='input-btn'><button class='btn-connexion'><a href='index.php' style='color:white;text-decoration:none;'> Se connecter </a><button></div>";
                                             ?>
 												<script type="text/javascript">
 													window.onload = function(){
@@ -105,7 +105,7 @@
 				</div>
 				
 				<div class="text-center pt136">
-					<a class="txt" href="login.php">
+					<a class="txt" href="index.php">
 						J'ai déjà un compte
 						<i class="fa fa-long-arrow-right ml5"></i>
 					</a>

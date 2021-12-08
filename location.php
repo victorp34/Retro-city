@@ -49,7 +49,7 @@
             <li class="nav-item"><a href="apropos.php" class="nav-link">À propos</a></li>
             <li class="nav-item">
                     <div>
-                        <button href="login.php" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal">
+                        <button href="index.php" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal">
                             Se déconnecter
                         </button>
                     </div>
@@ -66,7 +66,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                                 <form method="post">
-                                    <a href="login.php"><button type="submit" class="btn btn-primary" name="deco">Valider</button></a>
+                                    <a href="index.php"><button type="submit" class="btn btn-primary" name="deco">Valider</button></a>
                                 </form>
                                 <?php
                                 if (isset($_POST["deco"])) {
@@ -75,7 +75,7 @@
                                     $_SESSION["email"] = "";
                                     $_SESSION["password"] = "";
                                     $_SESSION["id"] = "";
-                                    header("Location: login.php");
+                                    header("Location: index.php");
                                 }
                                 ?>
                             </div>
@@ -197,8 +197,8 @@
 <?php
     try
     {
-    $dsn = 'mysql:host=localhost;dbname=console_project';
-    $dbh = new PDO($dsn, 'root', '');
+        $dsn = 'mysql:host=mysql-retro-gaming.alwaysdata.net;dbname=retro-gaming_console';
+        $dbh = new PDO($dsn, '251841', 'Password34070!');
     $where = '';
     $param = [];
 
